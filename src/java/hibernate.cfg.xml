@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+     <session-factory>
+     	<property name="connection.useUnicode">true</property> 
+        <property name="connection.characterEncoding">UTF-8</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/myinternship</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">pass</property>
+         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+     	<property name="current_session_context_class">thread</property>
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="show_sql">true</property> 
+		<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquire_increment">3</property>
+		<property name="hibernate.c3p0.idle_test_period">14400</property>
+		<property name="hibernate.c3p0.timeout">50400</property>
+		<property name="hibernate.c3p0.max_size">15</property>
+		<property name="hibernate.c3p0.min_size">3</property>
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.preferredTestQuery">select 1;</property>
+		<mapping resource="myinternship/admin/vo/RegisterTenant.hbm.xml"/>
+		<mapping resource="myinternship/admin/vo/RoomSetup.hbm.xml"/>
+		<mapping resource="myinternship/admin/vo/RoomAllotment.hbm.xml"/>
+		<mapping resource="myinternship/admin/vo/FeeCollection.hbm.xml"/>
+		
+      </session-factory>
+</hibernate-configuration>

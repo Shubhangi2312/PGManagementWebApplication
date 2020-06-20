@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="myinternship.admin.vo.RoomSetup" table="myinternship.roomsetup" lazy="false">
+		<id name="roomId" column="roomId" type="integer" unsaved-value="0">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="roomNo" 			column="roomNo"				type="integer"  	 		not-null="false" lazy="false"/>
+		<property name="typeOfRoom" 		column="typeOfRoom" 			type="string" 			not-null="false" lazy="false"/>	
+		<property name="roomStatus" 		column="roomStatus" 		    type="string" 			not-null="false" lazy="false"/>
+		<property name="roomCharge" 		column="roomCharge"			type="integer" 			not-null="false" lazy="false"/>
+		</class>
+</hibernate-mapping>

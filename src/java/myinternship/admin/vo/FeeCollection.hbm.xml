@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="myinternship.admin.vo.FeeCollection" table="myinternship.feecollection" lazy="false">
+		<id name="feeId" column="feeId" type="integer" unsaved-value="0">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="month" 			column="month"			type="string"  	 		not-null="false" lazy="false"/>
+		<property name="year" 		    column="year" 			type="long" 			not-null="false" lazy="false"/>	
+		<property name="amount" 		column="amount"			type="long" 			not-null="false" lazy="false"/>
+		<property name="remark" 		column="remark"			type="string"  	 		not-null="false" lazy="false"/>
+		<many-to-one name="tenantInfo" cascade="lock" class="myinternship.admin.vo.RegisterTenant" column="tenant_id" not-null="true" lazy="false" access="field"></many-to-one>
+		</class>
+</hibernate-mapping>

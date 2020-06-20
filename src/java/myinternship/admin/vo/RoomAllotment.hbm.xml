@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="myinternship.admin.vo.RoomAllotment" table="myinternship.room_allotment" lazy="false">
+		<id name="allotmentId" column="allotment_id" type="integer" unsaved-value="0">
+			<generator class="identity">
+			</generator>
+		</id>
+		<many-to-one name="tenantInfo" cascade="lock" class="myinternship.admin.vo.RegisterTenant" column="tenant_id" not-null="true" lazy="false" access="field"></many-to-one>
+		<many-to-one name="roomInfo" cascade="lock" class="myinternship.admin.vo.RoomSetup" column="roomId" not-null="true" lazy="false" access="field"></many-to-one>
+	
+	</class>
+</hibernate-mapping>

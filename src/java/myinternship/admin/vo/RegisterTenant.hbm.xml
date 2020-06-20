@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="myinternship.admin.vo.RegisterTenant" table="myinternship.register_tenant" lazy="false">
+		<id name="tenantId" column="tenant_id" type="integer" unsaved-value="0">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="name" 			column="name"				type="string"  	 		not-null="false" lazy="false"/>
+		<property name="mobile" 		column="mobile" 			type="long" 			not-null="false" lazy="false"/>	
+		<property name="address" 		column="address" 		    type="string" 			not-null="false" lazy="false"/>
+		<property name="parentno" 		column="parentno"			type="long" 			not-null="false" lazy="false"/>
+		<property name="aadhar" 		column="aadhar" 			type="long" 			not-null="false" lazy="false"/>
+		<property name="payment" 		column="payment" 			type="integer" 			not-null="false" lazy="false"/>
+		<property name="admissiondate" 	column="adm_date" 			type="java.util.Date" 	not-null="false" lazy="false"/>
+		<property name="tenantStatus" 	column="tenantStatus"		type="string"  	 		not-null="false" lazy="false"/>
+	</class>
+</hibernate-mapping>
